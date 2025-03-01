@@ -1,6 +1,6 @@
 #include <iostream>
-#include <fstream>
-#include <sstream>
+#include <fstream> // for file handling
+#include <sstream> // for splitting strings
 #include <vector>
 
 using namespace std;
