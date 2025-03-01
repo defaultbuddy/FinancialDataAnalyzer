@@ -2,10 +2,10 @@
 //
 
 #include <iostream>
+#include "FinancialDataAnalyzer.h"
 
-int main()
-{
-    std::cout << "Hello World!\n";
+void testFunction() {
+    std::cout << "Financial Analyzer Test Function Running!" << std::endl;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
