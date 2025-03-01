@@ -8,7 +8,7 @@ using namespace std;
 int main() {
     ifstream file("data.csv"); // Open the CSV file
 
-    if (!file) {
+	if (!file) { // Check if file was opened successfully
         cerr << "Error opening file!" << endl;
         return 1; // Return error code
     }
@@ -16,7 +16,7 @@ int main() {
     string line;
     vector<vector<string>> data; // Store CSV data in a 2D vector
 
-    while (getline(file, line)) {
+	while (getline(file, line)) { // Read data from file
         stringstream ss(line);
         vector<string> row;
         string cell;
@@ -26,7 +26,7 @@ int main() {
             row.push_back(cell);
         }
 
-        data.push_back(row);
+		data.push_back(row); // Add row to data
     }
 
     file.close(); // Close file
@@ -40,5 +40,5 @@ int main() {
         cout << endl;
     }
 
-    return 0;
+	return 0; // Return success code
 }
