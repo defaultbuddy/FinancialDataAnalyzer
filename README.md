@@ -12,3 +12,4 @@ Ran into errors when trying to build the project. Had to redo the structure star
 
 2. Setting up an Entry Point: The location in a program where execution begins. It's the first piece of code that runs when a program is launched.
 3. Namespace common practices to declutter code and avoid name conflicts if multiple libraries define the same function or class names
+4. How to manage multiple .cpp files (Only one can have main()).
