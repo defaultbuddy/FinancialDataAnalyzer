@@ -13,3 +13,9 @@ Ran into errors when trying to build the project. Had to redo the structure star
 2. Setting up an Entry Point: The location in a program where execution begins. It's the first piece of code that runs when a program is launched.
 3. Namespace common practices to declutter code and avoid name conflicts if multiple libraries define the same function or class names
 4. How to manage multiple .cpp files (Only one can have main()).
+5. Using vectors, 2D vectors, and accessing vector elements (.push_back, .pop_back, .at, .size, .empty, .clear, .insert, .resize).
+6. Traditional for loop vs Range-Based for loops
+
+Using "const auto@ for efficiency. Using & to avoid unnecessary copying can save memory and performance. Can also use const if we don't need to modify elements.
+
+7. How to read data from a .csv file and store in an appropriate variable (getline, stringstream)
