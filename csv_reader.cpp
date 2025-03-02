@@ -16,17 +16,17 @@ vector<vector<string>> readCSV(const string& filename) {
     }
 
     string line;
-    while (getline(file, line)) {
-        stringstream ss(line);
+	while (getline(file, line)) { // Iterate through file line by line
+		stringstream ss(line); // Convert line to stringstream
         vector<string> row;
         string cell;
 
-        while (getline(ss, cell, ',')) {
-            row.push_back(cell);
+		while (getline(ss, cell, ',')) { // Iterate through line by comma separated cell
+			row.push_back(cell); // Add current cell to row
         }
-        data.push_back(row);
+		data.push_back(row); // Add current row to data
     }
 
-    file.close();
+	file.close(); // Close file
     return data;
 }
