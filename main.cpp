@@ -5,7 +5,7 @@ using namespace std;
 
 int main() {
     string filename = "data.csv";
-    vector<vector<string>> data = readCSV(filename);
+	vector<vector<string>> data = readCSV(filename); // Load CSV data
 
     // Print the CSV data
     cout << "CSV Data Loaded Successfully:\n";
