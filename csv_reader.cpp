@@ -1,44 +1,32 @@
 #include <iostream>
-#include <fstream> // for file handling
-#include <sstream> // for splitting strings
+#include <fstream>
+#include <sstream>
 #include <vector>
 
 using namespace std;
 
-int main() {
-    ifstream file("data.csv"); // Open the CSV file
+// Function to read CSV and return data as a 2D vector
+vector<vector<string>> readCSV(const string& filename) {
+    ifstream file(filename);
+    vector<vector<string>> data;
 
-	if (!file) { // Check if file was opened successfully
-        cerr << "Error opening file!" << endl;
-        return 1; // Return error code
+    if (!file) {
+        cerr << "Error opening file: " << filename << endl;
+        exit(1); // Exit program with error code 1
     }
 
     string line;
-    vector<vector<string>> data; // Store CSV data in a 2D vector
-
-	while (getline(file, line)) { // Read data from file
+    while (getline(file, line)) {
         stringstream ss(line);
         vector<string> row;
         string cell;
 
-        // Split line by commas
         while (getline(ss, cell, ',')) {
             row.push_back(cell);
         }
-
-		data.push_back(row); // Add row to data
+        data.push_back(row);
     }
 
-    file.close(); // Close file
-
-    // Print the data (for testing)
-    cout << "CSV Data Loaded Successfully:\n";
-    for (const auto& row : data) {
-        for (const auto& cell : row) {
-            cout << cell << "\t";
-        }
-        cout << endl;
-    }
-
-	return 0; // Return success code
+    file.close();
+    return data;
 }
