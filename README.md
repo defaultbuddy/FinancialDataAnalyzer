@@ -28,6 +28,6 @@ struct : members are public by default
 class: members are private by default
 
 10. Encapsulation: Useful for hiding data and access control (unique to class)
-
+11. Write function for basic data analysis (after separating and storing the data in a struct): calculateNetProfit() takes only the values from the "amount" category in a transaction and sums them up to give net profit.
 
 
