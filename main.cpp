@@ -1,20 +1,21 @@
 #include <iostream>
-#include "csv_reader.h"  // Include CSV reader
-
-using namespace std;
+#include "csv_reader.h"
 
 int main() {
-    string filename = "data.csv";
-	vector<vector<string>> data = readCSV(filename); // Load CSV data
+    readCSV("data.csv");  // Read CSV and store data
 
-    // Print the CSV data
-    cout << "CSV Data Loaded Successfully:\n";
-    for (const auto& row : data) {
-        for (const auto& cell : row) {
-            cout << cell << "\t";
-        }
-        cout << endl;
+    // Print all stored transactions
+    std::cout << "Stored Transactions:\n";
+    for (const auto& t : transactions) {
+        std::cout << "Date: " << t.date
+            << ", Amount($): " << t.amount
+            << ", Category: " << t.category << std::endl;
     }
+
+	// Calculate and print total expenses
+	double netProfit = calculateNetProfit();
+	std::cout << "\nNet Profit: $" << netProfit << std::endl;
 
     return 0;
 }
+

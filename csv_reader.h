@@ -4,6 +4,20 @@
 #include <vector>
 #include <string>
 
-std::vector<std::vector<std::string>> readCSV(const std::string& filename);
+// Define the struct
+struct Transaction {
+    std::string date;
+    std::string category;
+    double amount;
+};
+
+// Declare the transactions vector (extern means it's defined elsewhere)
+extern std::vector<Transaction> transactions;
+
+// Declare the function for reading CSV file
+void readCSV(const std::string& filename);
+
+// Declare the function for calculating total expenses
+double calculateNetProfit();
 
 #endif

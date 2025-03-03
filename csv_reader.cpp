@@ -1,32 +1,42 @@
+#include "csv_reader.h"
 #include <iostream>
 #include <fstream>
 #include <sstream>
 #include <vector>
 
-using namespace std;
+std::vector<Transaction> transactions;  // Vector to store all transactions
 
-// Function to read CSV and return data as a 2D vector
-vector<vector<string>> readCSV(const string& filename) {
-    ifstream file(filename);
-    vector<vector<string>> data;
-
+void readCSV(const std::string& filename) {
+    std::ifstream file(filename);
     if (!file) {
-        cerr << "Error opening file: " << filename << endl;
-        exit(1); // Exit program with error code 1
+        std::cerr << "Error opening file: " << filename << std::endl;
+        exit(1);
     }
 
-    string line;
-	while (getline(file, line)) { // Iterate through file line by line
-		stringstream ss(line); // Convert line to stringstream
-        vector<string> row;
-        string cell;
+    std::string line;
+    std::getline(file, line);  // Skip header row (Date,Amount,Category)
 
-		while (getline(ss, cell, ',')) { // Iterate through line by comma separated cell
-			row.push_back(cell); // Add current cell to row
-        }
-		data.push_back(row); // Add current row to data
+    while (std::getline(file, line)) {
+		std::stringstream ss(line); // Convert line to stringstream
+		std::string date, category, amountStr; // Variables to store data
+        double amount;
+
+        std::getline(ss, date, ',');      // Extract Date
+        std::getline(ss, category, ',');  // Extract Category
+        std::getline(ss, amountStr, ','); // Extract Amount (as string)
+
+        amount = std::stod(amountStr);  // Convert Amount to double
+
+        transactions.push_back({ date, category, amount });  // Store in vector
     }
 
-	file.close(); // Close file
-    return data;
+    file.close();
+}
+
+double calculateNetProfit() {
+	double total = 0.0;
+	for (const auto& t : transactions) { // Read-only for loop to iterate over transactions
+		total += t.amount;
+	}
+	return total;
 }
