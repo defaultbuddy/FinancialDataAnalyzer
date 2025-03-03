@@ -19,3 +19,7 @@ Ran into errors when trying to build the project. Had to redo the structure star
 Using "const auto@ for efficiency. Using & to avoid unnecessary copying can save memory and performance. Can also use const if we don't need to modify elements.
 
 7. How to read data from a .csv file and store in an appropriate variable (getline, stringstream)
+8. Struct + vector approach to store and manage structured data effficiently in C++
+9. Passing by value vs passing by reference (reference is more efficient on memory)
+10. 
+
