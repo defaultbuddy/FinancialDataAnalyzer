@@ -40,3 +40,15 @@ double calculateNetProfit() {
 	}
 	return total;
 }
+
+double findLargestExpense() {
+	double largestExpense = 0.0;
+    for (const auto& t : transactions) {
+        if (t.amount < 0 && t.amount < largestExpense) {
+            largestExpense = t.amount;
+        }
+    }
+	largestExpense *= -1; // Convert to positive value
+
+    return largestExpense;
+}

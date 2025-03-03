@@ -16,6 +16,10 @@ int main() {
 	double netProfit = calculateNetProfit();
 	std::cout << "\nNet Profit: $" << netProfit << std::endl;
 
+	// Find and print the largest expense
+	double largestExpense = findLargestExpense();
+    std::cout << "\nLargest Expense: $" << largestExpense << std::endl;
+
     return 0;
 }
 

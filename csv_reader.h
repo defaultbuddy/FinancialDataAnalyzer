@@ -20,4 +20,7 @@ void readCSV(const std::string& filename);
 // Declare the function for calculating total expenses
 double calculateNetProfit();
 
+// Declare the function for finding the largest expense
+double findLargestExpense();
+
 #endif
