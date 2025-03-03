@@ -21,5 +21,13 @@ Using "const auto@ for efficiency. Using & to avoid unnecessary copying can save
 7. How to read data from a .csv file and store in an appropriate variable (getline, stringstream)
 8. Struct + vector approach to store and manage structured data effficiently in C++
 9. Passing by value vs passing by reference (reference is more efficient on memory)
-10. 
+10. Difference between a struct and a class
+
+struct : members are public by default
+
+class: members are private by default
+
+10. Encapsulation: Useful for hiding data and access control (unique to class)
+
+
 
