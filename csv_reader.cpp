@@ -33,7 +33,7 @@ void readCSV(const std::string& filename) {
     file.close();
 }
 
-double calculateNetProfit() {
+double calculateNetBalance() {
 	double total = 0.0;
 	for (const auto& t : transactions) { // Read-only for loop to iterate over transactions
 		total += t.amount;

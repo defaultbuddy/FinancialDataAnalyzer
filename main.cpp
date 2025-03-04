@@ -13,8 +13,8 @@ int main() {
     }
 
 	// Calculate and print total expenses
-	double netProfit = calculateNetProfit();
-	std::cout << "\nNet Profit: $" << netProfit << std::endl;
+	double netBalance = calculateNetBalance();
+	std::cout << "\nNet Balance: $" << netBalance << std::endl;
 
 	// Find and print the largest expense
 	double largestExpense = findLargestExpense();
