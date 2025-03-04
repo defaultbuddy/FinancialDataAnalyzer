@@ -18,16 +18,16 @@ void readCSV(const std::string& filename) {
 
     while (std::getline(file, line)) {
 		std::stringstream ss(line); // Convert line to stringstream
-		std::string date, category, amountStr; // Variables to store data
+		std::string date, amountStr, category; // Variables to store data
         double amount;
 
         std::getline(ss, date, ',');      // Extract Date
-        std::getline(ss, category, ',');  // Extract Category
         std::getline(ss, amountStr, ','); // Extract Amount (as string)
+        std::getline(ss, category, ',');  // Extract Category
 
         amount = std::stod(amountStr);  // Convert Amount to double
 
-        transactions.push_back({ date, category, amount });  // Store in vector
+        transactions.push_back({ date, amount, category });  // Store in vector
     }
 
     file.close();

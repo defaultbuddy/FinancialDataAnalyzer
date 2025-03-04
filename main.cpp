@@ -2,7 +2,7 @@
 #include "csv_reader.h"
 
 int main() {
-    readCSV("data.csv");  // Read CSV and store data
+    readCSV("large_transactions_with_negatives.csv");  // Read CSV and store data
 
     // Print all stored transactions
     std::cout << "Stored Transactions:\n";

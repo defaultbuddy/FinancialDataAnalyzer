@@ -7,8 +7,8 @@
 // Define the struct
 struct Transaction {
     std::string date;
-    std::string category;
     double amount;
+    std::string category;
 };
 
 // Declare the transactions vector (extern means it's defined elsewhere)
