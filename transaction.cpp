@@ -57,8 +57,8 @@ std::vector<Transaction> TransactionManager::getTransactions() const {
 }
 
 void TransactionManager::sortTransactionsByDate() {
-	std::sort(transactions.begin(), transactions.end(),
-		[](const Transaction& a, const Transaction& b) {
+	std::sort(transactions.begin(), transactions.end(), // Sort transactions by date
+		[](const Transaction& a, const Transaction& b) { // Lambda function to compare transactions by date
 		return a.date < b.date;
 	});
 }
