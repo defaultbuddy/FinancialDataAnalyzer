@@ -29,7 +29,7 @@
     <ClInclude Include="FinancialDataAnalyzer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="csv_reader.h">
+    <ClInclude Include="transaction.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

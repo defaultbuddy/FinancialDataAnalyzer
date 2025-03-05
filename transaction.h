@@ -1,5 +1,4 @@
-#ifndef CSV_READER_H
-#define CSV_READER_H
+#pragma once
 
 #include <vector>
 #include <string>
@@ -9,6 +8,17 @@ struct Transaction {
     std::string date;
     double amount;
     std::string category;
+};
+
+// Define the class
+class TransactionManager {
+private:
+    std::vector<Transaction> transactions;
+
+public:
+    void readCSV(const std::string& filename);
+    double calculateTotalExpenses() const;
+    void printSummary() const;
 };
 
 // Declare the transactions vector (extern means it's defined elsewhere)
@@ -22,5 +32,3 @@ double calculateNetBalance();
 
 // Declare the function for finding the largest expense
 double findLargestExpense();
-
-#endif
