@@ -29,5 +29,6 @@ class: members are private by default
 
 10. Encapsulation: Useful for hiding data and access control (unique to class)
 11. Write function for basic data analysis (after separating and storing the data in a struct): calculateNetProfit() takes only the values from the "amount" category in a transaction and sums them up to give net profit. Also wrote one without guidance for practice to find the highest expense out of all transactions).
+12. std:sort from <algorithm> to sort data. Uses a lambda function to compare values.
 
-
+A lambda function (expression) is an anonymous function that is typically used when a function is short and only used once, when passing functions to higher-order functions, or when trying to keep the code readable.
