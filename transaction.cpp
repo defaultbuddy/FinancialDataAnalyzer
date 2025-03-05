@@ -4,9 +4,7 @@
 #include <sstream>
 #include <vector>
 
-std::vector<Transaction> transactions;  // Vector to store all transactions
-
-void readCSV(const std::string& filename) {
+void TransactionManager::readCSV(const std::string& filename) {
     std::ifstream file(filename);
     if (!file) {
         std::cerr << "Error opening file: " << filename << std::endl;
@@ -33,7 +31,7 @@ void readCSV(const std::string& filename) {
     file.close();
 }
 
-double calculateNetBalance() {
+double TransactionManager::calculateNetBalance() const {
 	double total = 0.0;
 	for (const auto& t : transactions) { // Read-only for loop to iterate over transactions
 		total += t.amount;
@@ -41,7 +39,7 @@ double calculateNetBalance() {
 	return total;
 }
 
-double findLargestExpense() {
+double TransactionManager::findLargestExpense() const {
 	double largestExpense = 0.0;
     for (const auto& t : transactions) {
         if (t.amount < 0 && t.amount < largestExpense) {
@@ -51,4 +49,8 @@ double findLargestExpense() {
 	largestExpense *= -1; // Convert to positive value
 
     return largestExpense;
+}
+
+std::vector<Transaction> TransactionManager::getTransactions() const {
+    return transactions;
 }

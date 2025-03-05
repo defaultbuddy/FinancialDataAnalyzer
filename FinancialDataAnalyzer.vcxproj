@@ -127,7 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="csv_reader.cpp" />
+    <ClCompile Include="transaction.cpp" />
     <ClCompile Include="FinancialDataAnalyzer.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
