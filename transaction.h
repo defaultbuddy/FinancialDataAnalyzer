@@ -20,4 +20,5 @@ public:
     double calculateNetBalance() const;
     double findLargestExpense() const;
     std::vector<Transaction> getTransactions() const;
+	void sortTransactionsByDate();
 };

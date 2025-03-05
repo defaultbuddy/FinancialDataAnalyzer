@@ -3,6 +3,7 @@
 #include <fstream>
 #include <sstream>
 #include <vector>
+#include <algorithm>
 
 void TransactionManager::readCSV(const std::string& filename) {
     std::ifstream file(filename);
@@ -53,4 +54,11 @@ double TransactionManager::findLargestExpense() const {
 
 std::vector<Transaction> TransactionManager::getTransactions() const {
     return transactions;
+}
+
+void TransactionManager::sortTransactionsByDate() {
+	std::sort(transactions.begin(), transactions.end(),
+		[](const Transaction& a, const Transaction& b) {
+		return a.date < b.date;
+	});
 }

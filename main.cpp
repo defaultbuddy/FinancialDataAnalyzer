@@ -6,8 +6,11 @@ int main() {
 
     manager.readCSV("large_transactions_with_negatives.csv");  // Read CSV and store data
 
+	// Sort transactions by date
+	manager.sortTransactionsByDate();
+
     // Print all stored transactions
-    std::cout << "Stored Transactions:\n";
+    std::cout << "Sorted Transactions by Date:\n";
     for (const auto& t : manager.getTransactions()) {
         std::cout << "Date: " << t.date
             << ", Amount($): " << t.amount
